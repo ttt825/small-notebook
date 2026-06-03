@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="16dp">
+
+    <!-- 日期分组头部 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:cardCornerRadius="8dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:background="#E5E7EB"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/date_group_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4月14日"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1F2937" />
+
+            <TextView
+                android:id="@+id/date_group_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3条记录"
+                android:textSize="14sp"
+                android:textColor="#6B7280"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/date_group_expand"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:text="▼"
+                android:textSize="12sp"
+                android:textColor="#3B82F6"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- 记录列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/date_group_records"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:nestedScrollingEnabled="false" />
+
+</LinearLayout>

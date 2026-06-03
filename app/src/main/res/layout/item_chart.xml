@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chart_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp"
+    android:gravity="center_vertical"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/chart_month"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="2月"
+        android:textSize="13sp"
+        android:textColor="#6B7280"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:id="@+id/chart_bar_container"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|start"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <View
+            android:id="@+id/chart_bar_fill"
+            android:layout_width="0dp"
+            android:layout_height="28dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/chart_count"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:textSize="14sp"
+        android:textColor="#374151"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+</LinearLayout>

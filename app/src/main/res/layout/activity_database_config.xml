@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAFB"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="数据库配置"
+            app:titleTextColor="#374151"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="数据库设置"
+                    android:textSize="14sp"
+                    android:textColor="#9CA3AF"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="启用数据库"
+                            android:textSize="15sp"
+                            android:textColor="#374151" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="启用后将数据同步到数据库"
+                            android:textSize="12sp"
+                            android:textColor="#9CA3AF"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <Switch
+                        android:id="@+id/switch_enable_db"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="数据库地址"
+                        android:textSize="15sp"
+                        android:textColor="#374151" />
+
+                    <EditText
+                        android:id="@+id/et_db_url"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:hint="https://your-database.com/api"
+                        android:inputType="textUri"
+                        android:textSize="14sp"
+                        android:textColor="#374151"
+                        android:background="@drawable/edit_text_border"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:enabled="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="14dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="数据库密钥"
+                        android:textSize="15sp"
+                        android:textColor="#374151" />
+
+                    <EditText
+                        android:id="@+id/et_db_key"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:hint="输入您的数据库访问密钥"
+                        android:inputType="text"
+                        android:textSize="14sp"
+                        android:textColor="#374151"
+                        android:background="@drawable/edit_text_border"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:enabled="false" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_test_connection"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:text="测试数据库连接"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#3B82F6"
+                    android:minHeight="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:enabled="false" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/layout_steps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="连接状态"
+                    android:textSize="14sp"
+                    android:textColor="#9CA3AF"
+                    android:layout_marginBottom="12dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:text="保存配置"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#D1D5DB"
+            android:minHeight="0dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>
