@@ -1,10 +1,12 @@
 package com.xiaojilu.app.adapter
 
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xiaojilu.app.R
@@ -22,12 +24,26 @@ class DateGroupAdapter(
         private val countText: TextView = itemView.findViewById(R.id.date_group_count)
         private val expandButton: Button = itemView.findViewById(R.id.date_group_expand)
         private val recordsRecycler: RecyclerView = itemView.findViewById(R.id.date_group_records)
+        private val todayBadge: TextView = itemView.findViewById(R.id.date_group_today_badge)
         
         private lateinit var recordAdapter: RecordAdapter
 
         fun bind(group: DateGroup) {
             dateText.text = group.formattedDate
             countText.text = "${group.recordCount}条记录"
+            
+            // 判断是否是今天
+            val todayStr = DateUtils.getCurrentBeijingDate()
+            val isToday = group.date == todayStr
+            if (isToday) {
+                todayBadge.visibility = View.VISIBLE
+                dateText.setTypeface(null, Typeface.BOLD)
+                dateText.setTextColor(ContextCompat.getColor(itemView.context, R.color.primary))
+            } else {
+                todayBadge.visibility = View.GONE
+                dateText.setTypeface(null, Typeface.BOLD)
+                dateText.setTextColor(ContextCompat.getColor(itemView.context, R.color.ink))
+            }
             
             // 设置展开/折叠状态
             updateExpandState(group)

@@ -67,7 +67,7 @@ class DatabaseStatusActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_database_status)
 
-        window.statusBarColor = android.graphics.Color.parseColor("#F9FAFB")
+        window.statusBarColor = android.graphics.Color.parseColor("#F8FAFC")
         window.decorView.systemUiVisibility = android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         initViews()
@@ -156,7 +156,7 @@ class DatabaseStatusActivity : AppCompatActivity() {
             }
             lastRefreshConnectionTime = now
             setButtonGray(btnRefreshConnection)
-            uiHandler.postDelayed({ setButtonGreen(btnRefreshConnection) }, 5000L)
+            uiHandler.postDelayed({ setButtonSuccess(btnRefreshConnection) }, 5000L)
             loadDynamicInfo()
         }
 
@@ -170,7 +170,7 @@ class DatabaseStatusActivity : AppCompatActivity() {
             }
             lastRefreshStatsTime = now
             setButtonGray(btnRefreshStats)
-            uiHandler.postDelayed({ setButtonGreen(btnRefreshStats) }, 5000L)
+            uiHandler.postDelayed({ setButtonSuccess(btnRefreshStats) }, 5000L)
             refreshStats()
         }
 
@@ -444,7 +444,7 @@ class DatabaseStatusActivity : AppCompatActivity() {
         val canSync = dirtyIds.isEmpty() && failedIds.isEmpty() && hasNetwork && !countsMatch && StorageManager.isDatabaseEnabled()
 
         if (canSync) {
-            setButtonGreen(btnSyncNow)
+            setButtonSuccess(btnSyncNow)
         } else {
             setButtonGray(btnSyncNow)
         }
@@ -567,24 +567,24 @@ class DatabaseStatusActivity : AppCompatActivity() {
     }
 
     private fun setButtonGray(button: Button) {
-        button.backgroundTintList = android.content.res.ColorStateList.valueOf(0xFF9CA3AF.toInt())
-        button.setTextColor(0xFFFFFFFF.toInt())
+        button.backgroundTintList = android.content.res.ColorStateList.valueOf(getColor(R.color.muted_light))
+        button.setTextColor(getColor(R.color.white))
     }
 
-    private fun setButtonGreen(button: Button) {
-        button.backgroundTintList = android.content.res.ColorStateList.valueOf(0xFF10B981.toInt())
-        button.setTextColor(0xFFFFFFFF.toInt())
+    private fun setButtonSuccess(button: Button) {
+        button.backgroundTintList = android.content.res.ColorStateList.valueOf(getColor(R.color.primary))
+        button.setTextColor(getColor(R.color.white))
     }
 
-    private fun setButtonYellow(button: Button) {
-        button.backgroundTintList = android.content.res.ColorStateList.valueOf(0xFFF59E0B.toInt())
-        button.setTextColor(0xFFFFFFFF.toInt())
+    private fun setButtonWarning(button: Button) {
+        button.backgroundTintList = android.content.res.ColorStateList.valueOf(getColor(R.color.warning))
+        button.setTextColor(getColor(R.color.white))
     }
 
     private fun updateRetryFailedButton() {
         val failedIds = StorageManager.getFailedIds()
         if (failedIds.isNotEmpty()) {
-            setButtonYellow(btnRetryFailed)
+            setButtonWarning(btnRetryFailed)
         } else {
             setButtonGray(btnRetryFailed)
         }
@@ -593,7 +593,7 @@ class DatabaseStatusActivity : AppCompatActivity() {
     private fun updateProcessPendingButton() {
         val dirtyIds = StorageManager.getDirtyIds()
         if (dirtyIds.isNotEmpty() && !isProcessingQueue) {
-            setButtonGreen(btnProcessPending)
+            setButtonSuccess(btnProcessPending)
         } else {
             setButtonGray(btnProcessPending)
         }
@@ -671,9 +671,9 @@ class DatabaseStatusActivity : AppCompatActivity() {
     private fun loadDynamicInfo() {
         if (!StorageManager.isDatabaseEnabled()) {
             tvNetworkStatus.text = "未配置"
-            tvNetworkStatus.setTextColor(getColor(R.color.gray_700))
+            tvNetworkStatus.setTextColor(getColor(R.color.muted))
             tvDatabaseStatus.text = "未配置"
-            tvDatabaseStatus.setTextColor(getColor(R.color.gray_700))
+            tvDatabaseStatus.setTextColor(getColor(R.color.muted))
             tvRemoteCount.text = "-"
             updateSyncNowButton()
             return
@@ -683,9 +683,9 @@ class DatabaseStatusActivity : AppCompatActivity() {
         val key = StorageManager.getDatabaseKey()
 
         tvNetworkStatus.text = "检测中..."
-        tvNetworkStatus.setTextColor(getColor(R.color.gray_700))
+        tvNetworkStatus.setTextColor(getColor(R.color.muted))
         tvDatabaseStatus.text = "检测中..."
-        tvDatabaseStatus.setTextColor(getColor(R.color.gray_700))
+        tvDatabaseStatus.setTextColor(getColor(R.color.muted))
 
         GlobalScope.launch(Dispatchers.IO) {
             var networkOk = false
@@ -729,18 +729,18 @@ class DatabaseStatusActivity : AppCompatActivity() {
                 if (!isFinishing && !isDestroyed) {
                     if (networkOk) {
                         tvNetworkStatus.text = "成功连接"
-                        tvNetworkStatus.setTextColor(getColor(R.color.blue_600))
+                        tvNetworkStatus.setTextColor(getColor(R.color.primary))
                     } else {
                         tvNetworkStatus.text = "连接失败"
-                        tvNetworkStatus.setTextColor(0xFFEF4444.toInt())
+                        tvNetworkStatus.setTextColor(getColor(R.color.error))
                     }
 
                     if (dbOk) {
                         tvDatabaseStatus.text = "成功连接"
-                        tvDatabaseStatus.setTextColor(getColor(R.color.blue_600))
+                        tvDatabaseStatus.setTextColor(getColor(R.color.primary))
                     } else {
                         tvDatabaseStatus.text = dbMsg
-                        tvDatabaseStatus.setTextColor(0xFFEF4444.toInt())
+                        tvDatabaseStatus.setTextColor(getColor(R.color.error))
                     }
 
                     currentRemoteCount = remoteCount

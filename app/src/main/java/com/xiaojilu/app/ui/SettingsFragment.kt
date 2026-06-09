@@ -63,10 +63,10 @@ class SettingsFragment : Fragment() {
 
         if (StorageManager.isDatabaseEnabled()) {
             tvDatabaseStatusHint.text = "已配置"
-            tvDatabaseStatusHint.setTextColor(resources.getColor(R.color.blue_600, null))
+            tvDatabaseStatusHint.setTextColor(resources.getColor(R.color.primary, null))
         } else {
             tvDatabaseStatusHint.text = "未配置"
-            tvDatabaseStatusHint.setTextColor(resources.getColor(R.color.gray_700, null))
+            tvDatabaseStatusHint.setTextColor(resources.getColor(R.color.muted, null))
         }
     }
 
@@ -75,10 +75,10 @@ class SettingsFragment : Fragment() {
         val tvDatabaseStatusHint = view?.findViewById<TextView>(R.id.tv_database_status_hint) ?: return
         if (StorageManager.isDatabaseEnabled()) {
             tvDatabaseStatusHint.text = "已配置"
-            tvDatabaseStatusHint.setTextColor(resources.getColor(R.color.blue_600, null))
+            tvDatabaseStatusHint.setTextColor(resources.getColor(R.color.primary, null))
         } else {
             tvDatabaseStatusHint.text = "未配置"
-            tvDatabaseStatusHint.setTextColor(resources.getColor(R.color.gray_700, null))
+            tvDatabaseStatusHint.setTextColor(resources.getColor(R.color.muted, null))
         }
     }
 }

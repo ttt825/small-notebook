@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         StorageManager.init(this)
 
-        window.statusBarColor = android.graphics.Color.parseColor("#F9FAFB")
+        window.statusBarColor = android.graphics.Color.parseColor("#F8FAFC")
         window.decorView.systemUiVisibility = android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         setupUI()

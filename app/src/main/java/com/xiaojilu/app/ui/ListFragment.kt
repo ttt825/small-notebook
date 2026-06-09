@@ -70,7 +70,7 @@ class ListFragment : Fragment() {
         emptyText = TextView(requireContext()).apply {
             text = "暂无记录"
             textSize = 16f
-            setTextColor(ContextCompat.getColor(requireContext(), R.color.gray_700))
+            setTextColor(ContextCompat.getColor(requireContext(), R.color.muted))
             gravity = android.view.Gravity.CENTER
         }
         sortAscBtn = view.findViewById(R.id.btn_sort_asc)
@@ -113,17 +113,17 @@ class ListFragment : Fragment() {
     private fun updateSortButtons() {
         if (sortOrder == "asc") {
             sortAscBtn.backgroundTintList = android.content.res.ColorStateList.valueOf(
-                ContextCompat.getColor(requireContext(), R.color.blue_600)
+                ContextCompat.getColor(requireContext(), R.color.primary)
             )
             sortDescBtn.backgroundTintList = android.content.res.ColorStateList.valueOf(
-                ContextCompat.getColor(requireContext(), R.color.gray_700)
+                ContextCompat.getColor(requireContext(), R.color.muted_light)
             )
         } else {
             sortAscBtn.backgroundTintList = android.content.res.ColorStateList.valueOf(
-                ContextCompat.getColor(requireContext(), R.color.gray_700)
+                ContextCompat.getColor(requireContext(), R.color.muted_light)
             )
             sortDescBtn.backgroundTintList = android.content.res.ColorStateList.valueOf(
-                ContextCompat.getColor(requireContext(), R.color.blue_600)
+                ContextCompat.getColor(requireContext(), R.color.primary)
             )
         }
     }

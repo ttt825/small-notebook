@@ -10,21 +10,22 @@
     android:paddingEnd="12dp"
     android:gravity="center_vertical"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground">
 
     <TextView
         android:id="@+id/chart_month"
-        android:layout_width="40dp"
+        android:layout_width="36dp"
         android:layout_height="wrap_content"
         android:text="2月"
         android:textSize="13sp"
-        android:textColor="#6B7280"
+        android:textColor="@color/muted"
         android:gravity="center" />
 
     <LinearLayout
         android:id="@+id/chart_bar_container"
         android:layout_width="0dp"
-        android:layout_height="28dp"
+        android:layout_height="24dp"
         android:layout_weight="1"
         android:orientation="horizontal"
         android:gravity="center_vertical|start"
@@ -34,17 +35,17 @@
         <View
             android:id="@+id/chart_bar_fill"
             android:layout_width="0dp"
-            android:layout_height="28dp" />
+            android:layout_height="24dp" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/chart_count"
-        android:layout_width="36dp"
+        android:layout_width="32dp"
         android:layout_height="wrap_content"
         android:text="10"
         android:textSize="14sp"
-        android:textColor="#374151"
+        android:textColor="@color/ink_secondary"
         android:textStyle="bold"
         android:gravity="center" />
 

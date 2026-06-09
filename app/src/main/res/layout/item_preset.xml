@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:layout_margin="4dp">
 
     <TextView
         android:id="@+id/tv_preset_text"
         android:layout_width="wrap_content"
-        android:layout_height="32dp"
+        android:layout_height="36dp"
         android:text="预设内容"
-        android:textSize="14sp"
-        android:textColor="#1F2937"
+        android:textSize="13sp"
+        android:textColor="@color/primary"
         android:background="@drawable/preset_chip_background"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
         android:gravity="center"
         android:clickable="true"
         android:focusable="true" />
 
     <ImageView
         android:id="@+id/iv_preset_delete"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="-8dp"
-        android:layout_marginTop="4dp"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@android:drawable/ic_delete"
+        android:layout_gravity="top|end"
         android:visibility="gone"
-        android:contentDescription="删除" />
+        android:tint="@color/error"
+        android:contentDescription="删除预设" />
 
-</LinearLayout>
+</FrameLayout>

@@ -3,12 +3,12 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="4dp">
+    android:padding="2dp">
 
     <FrameLayout
         android:id="@+id/calendar_day_bg"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
         android:background="@drawable/calendar_day_normal">
 
         <TextView
@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:layout_gravity="center" />
 
         <TextView
@@ -24,11 +24,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3"
-            android:textSize="10sp"
-            android:textColor="#EAB308"
+            android:textSize="9sp"
+            android:textColor="@color/primary"
             android:textStyle="bold"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="3dp"
             android:visibility="gone" />
     </FrameLayout>
 

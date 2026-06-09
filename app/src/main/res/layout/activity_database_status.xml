@@ -3,310 +3,330 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9FAFB"
-    android:fillViewport="true">
+    android:background="@color/surface_base">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:paddingBottom="28dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            app:navigationIcon="@drawable/ic_arrow_back"
-            app:title="数据库状态"
-            app:titleTextColor="#374151"
-            app:titleTextAppearance="@style/TextAppearance.AppCompat.Title" />
+            android:layout_height="wrap_content"
+            android:navigationIcon="@drawable/ic_arrow_left"
+            app:titleTextColor="@color/ink"
+            android:layout_marginBottom="4dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="数据库状态"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/ink"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看数据库连接和同步信息"
+            android:textSize="13sp"
+            android:textColor="@color/muted"
+            android:layout_marginBottom="20dp" />
+
+        <!-- 连接信息卡片 -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginTop="8dp">
+            app:cardBackgroundColor="@color/surface_card"
+            android:layout_marginBottom="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="连接状态"
-                    android:textSize="14sp"
-                    android:textColor="#9CA3AF"
-                    android:layout_marginBottom="12dp" />
-
-                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp">
+                    android:text="连接信息"
+                    android:textSize="13sp"
+                    android:textColor="@color/muted"
+                    android:layout_marginBottom="16dp" />
 
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:text="数据库地址"
-                        android:textSize="15sp"
-                        android:textColor="#374151" />
-
-                    <TextView
-                        android:id="@+id/tv_db_url"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="-"
-                        android:textSize="15sp"
-                        android:textColor="#374151"
-                        android:ellipsize="middle"
-                        android:maxLines="2" />
-                </LinearLayout>
-
-                <LinearLayout
+                <!-- 数据库地址 -->
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical">
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:text="API Key"
-                        android:textSize="15sp"
-                        android:textColor="#374151" />
-
-                    <TextView
-                        android:id="@+id/tv_db_key"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="-"
-                        android:textSize="15sp"
-                        android:textColor="#374151"
-                        android:maxLines="3"
-                        android:lineSpacingMultiplier="1.2" />
-
-                    <ImageView
-                        android:id="@+id/iv_toggle_key"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:padding="6dp"
-                        android:src="@drawable/ic_visibility_off"
-                        android:contentDescription="显示/隐藏"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:background="?attr/selectableItemBackgroundBorderless" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp">
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:text="网络状态"
-                        android:textSize="15sp"
-                        android:textColor="#374151" />
-
-                    <TextView
-                        android:id="@+id/tv_network_status"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="检测中..."
-                        android:textSize="15sp"
-                        android:textColor="#9CA3AF" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="14dp">
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:text="数据库状态"
-                        android:textSize="15sp"
-                        android:textColor="#374151" />
-
-                    <TextView
-                        android:id="@+id/tv_database_status"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="检测中..."
-                        android:textSize="15sp"
-                        android:textColor="#9CA3AF" />
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/btn_refresh_connection"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:text="刷新"
-                    android:textSize="14sp"
-                    android:textColor="#FFFFFF"
-                    android:backgroundTint="#10B981"
-                    android:minHeight="0dp"
-                    android:paddingTop="0dp"
-                    android:paddingBottom="0dp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginTop="16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                    android:text="数据库地址"
+                    android:textSize="12sp"
+                    android:textColor="@color/muted"
+                    android:layout_marginBottom="4dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_db_url"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="数据统计"
+                    android:text="—"
                     android:textSize="14sp"
-                    android:textColor="#9CA3AF"
-                    android:layout_marginBottom="12dp" />
+                    android:textColor="@color/ink"
+                    android:background="@drawable/bg_info_field"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="10dp"
+                    android:layout_marginBottom="14dp" />
 
-                <LinearLayout
+                <!-- API Key -->
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp">
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:text="本地记录"
-                        android:textSize="15sp"
-                        android:textColor="#374151" />
-
-                    <TextView
-                        android:id="@+id/tv_local_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textSize="15sp"
-                        android:textColor="#374151" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="14dp">
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:text="数据库记录"
-                        android:textSize="15sp"
-                        android:textColor="#374151" />
-
-                    <TextView
-                        android:id="@+id/tv_remote_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textSize="15sp"
-                        android:textColor="#374151" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btn_refresh_stats"
-                        android:layout_width="0dp"
-                        android:layout_height="36dp"
-                        android:layout_weight="1"
-                        android:text="刷新"
-                        android:textSize="14sp"
-                        android:textColor="#FFFFFF"
-                        android:backgroundTint="#10B981"
-                        android:minHeight="0dp"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
-                        android:layout_marginEnd="8dp" />
-
-                    <Button
-                        android:id="@+id/btn_sync_now"
-                        android:layout_width="0dp"
-                        android:layout_height="36dp"
-                        android:layout_weight="1"
-                        android:text="立即同步"
-                        android:textSize="14sp"
-                        android:textColor="#FFFFFF"
-                        android:backgroundTint="#9CA3AF"
-                        android:minHeight="0dp"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
-                        android:layout_marginStart="8dp" />
-                </LinearLayout>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginTop="16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                    android:text="API Key"
+                    android:textSize="12sp"
+                    android:textColor="@color/muted"
+                    android:layout_marginBottom="4dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp">
+                    android:background="@drawable/bg_info_field"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_db_key"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="••••••"
+                        android:textSize="14sp"
+                        android:textColor="@color/ink" />
+
+                    <ImageView
+                        android:id="@+id/iv_toggle_key"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@android:drawable/ic_menu_view"
+                        android:layout_marginStart="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="@color/primary"
+                        android:contentDescription="显示/隐藏密钥" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 连接状态卡片 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface_card"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="连接状态"
+                    android:textSize="13sp"
+                    android:textColor="@color/muted"
+                    android:layout_marginBottom="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="更新队列"
-                        android:textSize="14sp"
-                        android:textColor="#9CA3AF" />
+                        android:text="网络连接"
+                        android:textSize="15sp"
+                        android:textColor="@color/ink_secondary" />
 
-                    <ImageView
-                        android:id="@+id/iv_clear_queue"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:padding="2dp"
-                        android:src="@drawable/ic_delete"
-                        android:contentDescription="清除队列"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:background="?attr/selectableItemBackgroundBorderless" />
+                    <TextView
+                        android:id="@+id/tv_network_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="检测中..."
+                        android:textSize="14sp"
+                        android:textColor="@color/muted" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="数据库连接"
+                        android:textSize="15sp"
+                        android:textColor="@color/ink_secondary" />
+
+                    <TextView
+                        android:id="@+id/tv_database_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="检测中..."
+                        android:textSize="14sp"
+                        android:textColor="@color/muted" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_refresh_connection"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="刷新连接状态"
+                    android:textSize="13sp"
+                    app:cornerRadius="12dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 数据统计卡片 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface_card"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="数据统计"
+                        android:textSize="13sp"
+                        android:textColor="@color/muted" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_refresh_stats"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:text="刷新"
+                        android:textSize="12sp"
+                        app:cornerRadius="8dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="本地记录"
+                        android:textSize="15sp"
+                        android:textColor="@color/ink_secondary" />
+
+                    <TextView
+                        android:id="@+id/tv_local_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="—"
+                        android:textSize="15sp"
+                        android:textColor="@color/ink" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="远程记录"
+                        android:textSize="15sp"
+                        android:textColor="@color/ink_secondary" />
+
+                    <TextView
+                        android:id="@+id/tv_remote_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="—"
+                        android:textSize="15sp"
+                        android:textColor="@color/ink" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 同步操作卡片 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="同步统计"
+                    android:textSize="13sp"
+                    android:textColor="@color/muted"
+                    android:layout_marginBottom="14dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -315,11 +335,12 @@
                     android:layout_marginBottom="10dp">
 
                     <TextView
-                        android:layout_width="100dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="待更新"
                         android:textSize="15sp"
-                        android:textColor="#374151" />
+                        android:textColor="@color/ink_secondary" />
 
                     <TextView
                         android:id="@+id/tv_pending_count"
@@ -327,7 +348,7 @@
                         android:layout_height="wrap_content"
                         android:text="0 条数据"
                         android:textSize="15sp"
-                        android:textColor="#374151" />
+                        android:textColor="@color/ink" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -337,11 +358,12 @@
                     android:layout_marginBottom="10dp">
 
                     <TextView
-                        android:layout_width="100dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="成功"
                         android:textSize="15sp"
-                        android:textColor="#374151" />
+                        android:textColor="@color/ink_secondary" />
 
                     <TextView
                         android:id="@+id/tv_success_count"
@@ -349,21 +371,22 @@
                         android:layout_height="wrap_content"
                         android:text="0 条数据"
                         android:textSize="15sp"
-                        android:textColor="#10B981" />
+                        android:textColor="@color/success" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="16dp">
 
                     <TextView
-                        android:layout_width="100dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="失败"
                         android:textSize="15sp"
-                        android:textColor="#374151" />
+                        android:textColor="@color/ink_secondary" />
 
                     <TextView
                         android:id="@+id/tv_failed_count"
@@ -371,7 +394,7 @@
                         android:layout_height="wrap_content"
                         android:text="0 条数据"
                         android:textSize="15sp"
-                        android:textColor="#EF4444" />
+                        android:textColor="@color/error" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -380,44 +403,78 @@
                     android:orientation="horizontal"
                     android:layout_marginBottom="12dp">
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_retry_failed"
+                        style="@style/Widget.Material3.Button.TonalButton"
                         android:layout_width="0dp"
-                        android:layout_height="36dp"
+                        android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:text="重试"
-                        android:textSize="14sp"
-                        android:textColor="#FFFFFF"
-                        android:backgroundTint="#F59E0B"
-                        android:minHeight="0dp"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
-                        android:layout_marginEnd="8dp" />
+                        android:text="重试失败"
+                        android:textSize="13sp"
+                        app:backgroundTint="@color/warning_light"
+                        android:textColor="@color/warning"
+                        app:cornerRadius="12dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:layout_marginEnd="4dp" />
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_process_pending"
                         android:layout_width="0dp"
-                        android:layout_height="36dp"
+                        android:layout_height="40dp"
                         android:layout_weight="1"
                         android:text="处理队列"
-                        android:textSize="14sp"
-                        android:textColor="#FFFFFF"
-                        android:backgroundTint="#10B981"
-                        android:minHeight="0dp"
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
-                        android:layout_marginStart="8dp" />
+                        android:textSize="13sp"
+                        android:textColor="@color/white"
+                        app:backgroundTint="@color/primary"
+                        app:cornerRadius="12dp"
+                        android:stateListAnimator="@null"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:layout_marginStart="4dp" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tv_sync_detail"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_sync_now"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="立即同步"
+                    android:textSize="13sp"
+                    app:cornerRadius="12dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="暂无更新条目"
-                    android:textSize="13sp"
-                    android:textColor="#9CA3AF"
-                    android:background="#F9FAFB"
-                    android:padding="10dp" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_sync_detail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="暂无更新条目"
+                        android:textSize="13sp"
+                        android:textColor="@color/muted"
+                        android:background="@drawable/bg_info_field"
+                        android:padding="12dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_clear_queue"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@android:drawable/ic_menu_delete"
+                        android:layout_marginStart="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="@color/muted"
+                        android:contentDescription="清除队列" />
+                </LinearLayout>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

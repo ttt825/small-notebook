@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9FAFB">
+    android:background="@color/surface_base">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
@@ -17,13 +17,14 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/bottomBarContainer"
         android:layout_width="0dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="12dp"
-        app:cardCornerRadius="26dp"
-        app:cardElevation="8dp"
-        app:layout_constraintWidth_percent="0.72"
+        android:layout_height="56dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="@color/surface_card"
+        app:layout_constraintWidth_percent="0.78"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -32,15 +33,15 @@
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:backgroundColor="#E5FFFFFF"
-            app:iconTint="#374151"
-            app:iconTintActive="#374151"
-            app:textColor="#374151"
-            app:textSize="13sp"
+            app:backgroundColor="@color/surface_card"
+            app:iconTint="@color/muted"
+            app:iconTintActive="@color/primary"
+            app:textColor="@color/primary"
+            app:textSize="12sp"
             app:iconSize="22dp"
             app:iconMargin="2dp"
-            app:itemPadding="1dp"
-            app:sideMargins="2dp"
+            app:itemPadding="2dp"
+            app:sideMargins="4dp"
             app:menu="@menu/menu_bottom"/>
 
     </androidx.cardview.widget.CardView>

@@ -24,9 +24,9 @@ class ChartAdapter(
     private var selectedPosition: Int = -1
 
     private val barColors = listOf(
-        "#3B82F6", "#6366F1", "#8B5CF6", "#A855F7",
-        "#D946EF", "#EC4899", "#F43F5E", "#EF4444",
-        "#F97316", "#F59E0B", "#EAB308", "#84CC16"
+        "#0D9488", "#0F766E", "#14B8A6", "#2DD4BF",
+        "#06B6D4", "#0891B2", "#0E7490", "#155E75",
+        "#115E59", "#134E4A", "#F59E0B", "#EAB308"
     )
 
     inner class ChartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -101,18 +101,18 @@ class ChartAdapter(
 
         fun updateSelectedState(position: Int) {
             if (position == selectedPosition) {
-                val bg = PaintDrawable(Color.parseColor("#EFF6FF")).apply {
+                val bg = PaintDrawable(Color.parseColor("#F0FDFA")).apply {
                     setCornerRadius(12f)
                 }
                 itemRoot.background = bg
-                monthText.setTextColor(Color.parseColor("#2563EB"))
+                monthText.setTextColor(Color.parseColor("#0D9488"))
                 monthText.setTypeface(monthText.typeface, android.graphics.Typeface.BOLD)
-                countText.setTextColor(Color.parseColor("#1D4ED8"))
+                countText.setTextColor(Color.parseColor("#0F766E"))
                 countText.setTypeface(countText.typeface, android.graphics.Typeface.BOLD)
                 barFill.animate().scaleY(1.1f).setDuration(200).start()
             } else {
                 itemRoot.setBackgroundColor(Color.TRANSPARENT)
-                monthText.setTextColor(Color.parseColor("#6B7280"))
+                monthText.setTextColor(Color.parseColor("#9CA3AF"))
                 monthText.setTypeface(monthText.typeface, android.graphics.Typeface.NORMAL)
                 countText.setTextColor(Color.parseColor("#374151"))
                 countText.setTypeface(countText.typeface, android.graphics.Typeface.NORMAL)

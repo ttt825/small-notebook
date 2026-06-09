@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.App" parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="Theme.App" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/primary_light</item>
+        <item name="colorSurface">@color/surface_card</item>
+        <item name="colorOnSurface">@color/ink</item>
+        <item name="colorOnSurfaceVariant">@color/ink_secondary</item>
+        <item name="colorOutline">@color/border</item>
+        <item name="android:colorBackground">@color/surface_base</item>
+        <item name="android:statusBarColor">@color/surface_base</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/surface_card</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
 
     <style name="SwitchTheme" parent="Widget.AppCompat.CompoundButton.Switch">
-        <item name="colorControlActivated">#2563EB</item>
-        <item name="colorSwitchThumbNormal">#D1D5DB</item>
+        <item name="colorControlActivated">@color/primary</item>
+        <item name="colorSwitchThumbNormal">@color/muted_lighter</item>
     </style>
 </resources>

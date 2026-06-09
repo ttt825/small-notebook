@@ -39,7 +39,7 @@ class DatabaseConfigActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_database_config)
 
-        window.statusBarColor = Color.parseColor("#F9FAFB")
+        window.statusBarColor = Color.parseColor("#F8FAFC")
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         initViews()
@@ -184,7 +184,7 @@ class DatabaseConfigActivity : AppCompatActivity() {
             )
         }
 
-        val textColor = if (stepResult.success) Color.parseColor("#059669") else Color.parseColor("#DC2626")
+        val textColor = if (stepResult.success) Color.parseColor("#0D9488") else Color.parseColor("#EF4444")
         val statusTag = if (stepResult.success) "OK" else "FAIL"
 
         val text = TextView(this).apply {
@@ -272,14 +272,14 @@ class DatabaseConfigActivity : AppCompatActivity() {
 
     private fun updateSaveButtonState() {
         if (isSaveButtonEnabled()) {
-            btnSave.backgroundTintList = android.content.res.ColorStateList.valueOf(Color.parseColor("#10B981"))
+            btnSave.backgroundTintList = android.content.res.ColorStateList.valueOf(Color.parseColor("#0D9488"))
         } else {
-            btnSave.backgroundTintList = android.content.res.ColorStateList.valueOf(Color.parseColor("#D1D5DB"))
+            btnSave.backgroundTintList = android.content.res.ColorStateList.valueOf(Color.parseColor("#E2E8F0"))
         }
     }
 
     override fun onResume() {
         super.onResume()
-        window.statusBarColor = Color.parseColor("#F9FAFB")
+        window.statusBarColor = Color.parseColor("#F8FAFC")
     }
 }

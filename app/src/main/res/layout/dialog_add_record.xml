@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="8dp"
-    app:cardBackgroundColor="#FFFFFF">
+    app:cardCornerRadius="24dp"
+    app:cardElevation="1dp"
+    app:cardBackgroundColor="@color/surface_card">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,17 +19,16 @@
             android:text="添加记录"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#1F2937"
+            android:textColor="@color/ink"
             android:layout_marginBottom="20dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="记录时间"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:textColor="#6B7280"
-            android:layout_marginBottom="4dp" />
+            android:textSize="12sp"
+            android:textColor="@color/muted"
+            android:layout_marginBottom="6dp" />
 
         <TextView
             android:id="@+id/tv_add_datetime"
@@ -37,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="2026-02-11 14:30"
             android:textSize="15sp"
-            android:textColor="#1F2937"
+            android:textColor="@color/ink"
             android:padding="14dp"
             android:background="@drawable/edit_text_border"
             android:layout_marginBottom="18dp"
@@ -48,10 +47,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="记录内容"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:textColor="#6B7280"
-            android:layout_marginBottom="4dp" />
+            android:textSize="12sp"
+            android:textColor="@color/muted"
+            android:layout_marginBottom="6dp" />
 
         <EditText
             android:id="@+id/et_add_content"
@@ -59,7 +57,8 @@
             android:layout_height="wrap_content"
             android:minHeight="120dp"
             android:hint="请输入记录内容"
-            android:textColorHint="#9CA3AF"
+            android:textColorHint="@color/muted_light"
+            android:textColor="@color/ink"
             android:background="@drawable/edit_text_border"
             android:padding="14dp"
             android:gravity="top|start"
@@ -69,10 +68,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="快速预设"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:textColor="#6B7280"
-            android:layout_marginBottom="4dp" />
+            android:textSize="12sp"
+            android:textColor="@color/muted"
+            android:layout_marginBottom="6dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_presets"
@@ -84,7 +82,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#F3F4F6"
+            android:background="@color/border"
             android:layout_marginBottom="16dp" />
 
         <LinearLayout
@@ -93,28 +91,27 @@
             android:orientation="horizontal"
             android:gravity="end">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_cancel_add"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"
                 android:text="取消"
                 android:textSize="15sp"
-                android:textColor="#6B7280"
-                android:backgroundTint="#F3F4F6"
+                android:textColor="@color/muted"
                 app:cornerRadius="12dp"
-                android:stateListAnimator="@null"
-                android:layout_marginEnd="10dp" />
+                android:layout_marginEnd="8dp" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_confirm_add"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"
                 android:text="添加"
                 android:textSize="15sp"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#3B82F6"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/primary"
                 app:cornerRadius="12dp"
                 android:stateListAnimator="@null" />
         </LinearLayout>

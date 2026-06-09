@@ -55,13 +55,13 @@ class CalendarAdapter(
                 dayText.setTextColor(ContextCompat.getColor(itemView.context, R.color.white))
             } else if (day.isToday) {
                 background.setBackgroundResource(R.drawable.calendar_day_today)
-                dayText.setTextColor(ContextCompat.getColor(itemView.context, R.color.blue_500))
+                dayText.setTextColor(ContextCompat.getColor(itemView.context, R.color.primary_light))
             } else if (day.isCurrentMonth) {
                 background.setBackgroundResource(R.drawable.calendar_day_normal)
-                dayText.setTextColor(ContextCompat.getColor(itemView.context, R.color.gray_700))
+                dayText.setTextColor(ContextCompat.getColor(itemView.context, R.color.ink))
             } else {
                 background.setBackgroundResource(R.drawable.calendar_day_empty)
-                dayText.setTextColor(ContextCompat.getColor(itemView.context, R.color.gray_300))
+                dayText.setTextColor(ContextCompat.getColor(itemView.context, R.color.muted_light))
             }
 
             itemView.setOnClickListener {
